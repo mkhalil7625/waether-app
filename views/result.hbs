@@ -9,25 +9,12 @@
 <p>It's currently {{currentTemp}}</p>
 <p>It feels like {{tempFeelsLike}}</p>
 <p>Today's Summary: {{dailySummary}}</p>
-<p>{{weeklySummary}}</p>
+<p>Week's Summary{{weeklySummary}}</p>
 <figure class="icons">
     <canvas id={{icon}} width="100" height="100"></canvas>
 </figure>
 <script src="../javascripts/skycons.js"></script>
 
-<script>
-    var icons = new Skycons(),
-            list  = [
-                "clear-day", "clear-night", "partly-cloudy-day",
-                "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-                "fog"
-            ],
-            i;
-
-    for(i = list.length; i--; )
-        icons.set(list[i], list[i]);
-
-    icons.play();
-</script>
+<script src="../javascripts/weatherIcons.js"></script>
 <hr>
 <a href="/">Home</a>

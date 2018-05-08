@@ -5,10 +5,10 @@ var weather=require('../services/weather');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+    res.render('index');
 });
 router.get('/addAddress', function (req, res, next) {
-  var address=req.query.address;//get the address to be passed in to geocode
+    var address=req.query.address;//get the address to be passed in to geocode
     //call geocodeAddress from geocode.js, pass in the address
     geocode.geocodeAddress(address,(errorMessage, results)=>{
         if (errorMessage){//if we get an error back from geocode
