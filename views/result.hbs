@@ -1,0 +1,33 @@
+<h1>Weather Info for {{address}}</h1>
+<!--It's currently ${weatherResults.temperature}. It feels like ${weatherResults.apparentTemperature}.-->
+<!--//   Today it is ${weatherResults.dailySummary}, This week ${weatherResults.weeklySummary-->
+<!--address: results.address,-->
+<!--:weatherResults.temperature,-->
+<!--:this.apparentTemperature,-->
+<!--:this.dailySummary,-->
+<!--:this.weeklySummary-->
+<p>It's currently {{currentTemp}}</p>
+<p>It feels like {{tempFeelsLike}}</p>
+<p>Today's Summary: {{dailySummary}}</p>
+<p>{{weeklySummary}}</p>
+<figure class="icons">
+    <canvas id={{icon}} width="100" height="100"></canvas>
+</figure>
+<script src="../javascripts/skycons.js"></script>
+
+<script>
+    var icons = new Skycons(),
+            list  = [
+                "clear-day", "clear-night", "partly-cloudy-day",
+                "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+                "fog"
+            ],
+            i;
+
+    for(i = list.length; i--; )
+        icons.set(list[i], list[i]);
+
+    icons.play();
+</script>
+<hr>
+<a href="/">Home</a>

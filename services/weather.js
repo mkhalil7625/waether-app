@@ -12,6 +12,7 @@ var getWeather=(lat,lng,callback)=>{
                 temperature: body.currently.temperature,
                 apparentTemperature:body.currently.apparentTemperature,
                 weeklySummary:body.daily.summary,
+                icon:body.daily.icon,
                 dailySummary:body.daily.data[0].summary//data is an array
             });
         }else  {

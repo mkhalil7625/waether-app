@@ -23,8 +23,16 @@ router.get('/addAddress', function (req, res, next) {
                     if (errorMessage){
                         res.send(errorMessage);
                     }else{
-                        res.send(`It's currently ${weatherResults.temperature}. It feels like ${weatherResults.apparentTemperature}.
-                          Today it is ${weatherResults.dailySummary}, This week ${weatherResults.weeklySummary}.`);
+                        res.render('result',{
+                            address: results.address,
+                            currentTemp:weatherResults.temperature,
+                            tempFeelsLike:weatherResults.apparentTemperature,
+                            dailySummary:weatherResults.dailySummary,
+                            weeklySummary:weatherResults.weeklySummary,
+                            icon:weatherResults.icon
+                        });
+                        // res.send(`It's currently ${weatherResults.temperature}. It feels like ${weatherResults.apparentTemperature}.
+                        //   Today it is ${weatherResults.dailySummary}, This week ${weatherResults.weeklySummary}.`);
                     }
                 });
         }
